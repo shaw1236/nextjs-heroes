@@ -1,0 +1,45 @@
+### Server Port check
+GET http://ixinbuy.com:9090
+
+### Post Single
+POST http://ixinbuy.com:9090/api/heroes
+content-type: application/json
+
+{
+    "name": "Test"
+}
+
+### Post Many
+POST http://ixinbuy.com:9090/api/heroes
+content-type: application/json
+
+[
+    { "id": 1, "name": "Dr Nice" },
+    { "id": 2, "name": "Narco" },
+    { "id": 3, "name": "Bombasto" },
+    { "id": 4, "name": "Celeritas" },
+    { "id": 5, "name": "Magneta" },
+    { "id": 6, "name": "RubberMan" },
+    { "id": 7, "name": "Dynama" },
+    { "id": 8, "name": "Dr IQ" },
+    { "id": 9, "name": "Magma" },
+    { "id": 10, "name": "Tornado" }
+]
+
+### Query 
+GET http://ixinbuy.com:9090/api/heroes
+
+### Get 
+GET http://ixinbuy.com:9090/api/heroes/11
+
+### PUT 
+PUT http://ixinbuy.com:9090/api/heroes
+content-type: application/json
+
+{
+    "id": 10,
+    "name": "This is server"
+}
+
+### DELETE 
+DELETE http://ixinbuy.com:9090/api/heroes/27

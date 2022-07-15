@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Server",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node server.ts"
+  },
+  "keywords": [
+    "server",
+    "api"
+  ],
+  "author": "Simon Li",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "^14.0.6",
+    "bluebird": "^3.7.2",
+    "chalk": "^4.1.2",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.4"
+  }
+}

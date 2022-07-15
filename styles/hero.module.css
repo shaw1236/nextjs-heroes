@@ -1,0 +1,91 @@
+/* HeroesComponent's private CSS styles */
+.heroes { 
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+}
+  
+.heroes li {
+    cursor: pointer; 
+    position: relative; 
+    left: 0; 
+    background-color: #EEE;
+    margin: .5em; 
+    padding: .3em 0; 
+    height: 3em; 
+    border-radius: 4px; 
+}
+  
+.heroes li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+  
+.heroes li.selected {
+    background-color: #CFD8DC;
+    color: white;
+}
+
+.heroes li.selected:hover {
+    background-color: #BBD8DC;
+    color: white;
+}
+  
+.heroes .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.7em 0.7em 0 0.7em;
+    background-color:#405061;
+    line-height: 0.5em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+}
+
+.delete {
+    margin-top: 20px;
+    font-family: Arial;
+    color: maroon;
+    font-size: small;
+    background-color:lightyellow;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button {
+    border: none;
+    color: white;
+    background-color: green;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2 {
+    margin-top: 20px;
+    font-family: Arial;
+    color: maroon;
+    font-size: medium;
+    border-style: solid;
+    background-color:lightyellow;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: blue;
+}

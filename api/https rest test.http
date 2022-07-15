@@ -1,0 +1,42 @@
+### Root router
+GET https://localhost:44396/
+
+### Post - create/new, insertOne
+### >db.heroes.insertOne({id: 11, name: "Test"})
+POST https://localhost:44396/api/heroes
+content-type: application/json
+
+{
+    "id": 0,
+    "name": "Test"
+}
+
+### Get - List all
+### >db.heroes.find()
+GET https://localhost:44396/api/heroes
+
+
+### Get - Single
+### >db.heroes.find({id: 11}) or db.heroes.findOne({id: 11})
+GET https://localhost:44396/api/heroes/11
+
+
+### Get - Search Term
+### >db.heroes.find({name: {$regex: /^Dr./}})
+GET https://localhost:44396/api/heroes?name=Dr
+
+
+### PUT - update, updateOne
+### >db.heroes.updateOne({id: 11}, {$set: {name: "local hero"}})
+PUT https://localhost:44396/api/heroes
+content-type: application/json
+
+{
+    "id": 11,
+    "name": "local hero"
+}
+
+
+### DELETE - deleteOne
+### >db.heroes.deleteOne({id: 11})
+DELETE https://localhost:44396/api/heroes/11

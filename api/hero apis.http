@@ -1,0 +1,80 @@
+### Server Port check
+### $curl localhost:8080
+### >db.heroes.find()
+GET http://localhost:8080
+
+
+### Post - create/new, insertOne
+### $curl -X POST -H "Content-type: Application/json" -d "{ \"name\": \"Test\" }" http://localhost:8080/api/heroes
+### >db.heroes.insertOne({id: 11, name: "Test"})
+POST http://localhost:8080/api/heroes
+content-type: application/json
+
+{
+    "id": 11,
+    "name": "Test"
+}
+
+### Check uniqueness of id field
+POST http://localhost:8080/api/heroes
+content-type: application/json
+
+{
+    "id": 1,
+    "name": "Test"
+}
+
+### Post - insertMany
+### $curl -X POST -H "Content-type: Application/json" -d "[...]" http://localhost:8080/api/heroes
+### >db.heroes.insertMany([{id: 1, name: "Hero 1"}, ..., {id: n, name: "Hero n"}])
+POST http://localhost:8080/api/heroes
+content-type: application/json
+
+[
+    { "id": 1, "name": "Dr. Nice" },
+    { "id": 2, "name": "Narco" },
+    { "id": 3, "name": "Bombasto" },
+    { "id": 4, "name": "Celeritas" },
+    { "id": 5, "name": "Magneta" },
+    { "id": 6, "name": "RubberMan" },
+    { "id": 7, "name": "Dynama" },
+    { "id": 8, "name": "Dr. IQ" },
+    { "id": 9, "name": "Magma" },
+    { "id": 10, "name": "Tornado" }
+]
+
+
+### Get - List all
+### $curl localhost:8080/api/heroes
+### >db.heroes.find()
+GET http://localhost:8080/api/heroes
+
+
+### Get - Single
+### $curl localhost:8080/api/heroes/11
+### >db.heroes.find({id: 11}) or db.heroes.findOne({id: 11})
+GET http://localhost:8080/api/heroes/11
+
+
+### Get - Search Term
+### $curl localhost:8080/api/heroes?name=Dr.
+### >db.heroes.find({name: {$regex: /^Dr./}})
+GET http://localhost:8080/api/heroes?name=Dr
+
+
+### PUT - update, updateOne
+### $curl -X PUT -H "Content-type: Application/json" -d "{ \"id\": 11, \"name\": \"local hero\" }" http://localhost:8080/api/heroes
+### >db.heroes.updateOne({id: 11}, {$set: {name: "local hero"}})
+PUT http://localhost:8080/api/heroes
+content-type: application/json
+
+{
+    "id": 11,
+    "name": "local hero"
+}
+
+
+### DELETE - deleteOne
+### $curl -X DELETE -H "Content-type: Application/json" http://localhost:8080/api/heroes/11
+### >db.heroes.deleteOne({id: 11})
+DELETE http://localhost:8080/api/heroes/11
